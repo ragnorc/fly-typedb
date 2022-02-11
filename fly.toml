@@ -1,0 +1,21 @@
+# fly.toml file generated for flydb on 2022-02-11T16:46:57+01:00
+
+app = "flydb"
+
+kill_signal = "SIGINT"
+kill_timeout = 5
+
+[[mounts]]
+  destination = "/typedb-all-linux/server/data/"
+  encrypted = false
+  processes = []
+  source = "fly_data"
+
+[[services]]
+  internal_port = 1729
+  protocol = "tcp"
+
+
+  [[services.tcp_checks]]
+    interval = 10000
+    timeout = 2000
