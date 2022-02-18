@@ -1,14 +1,9 @@
-# Deploy TypeDB on Render
+# Deploy TypeDB on Fly
 
-This repo can be used to deploy [TypeDB] on Render.
+This repo can be used to deploy [TypeDB] on Fly. Fly allows easy deployment of servers with multiple regions, SSL and private networking and an awesome CLI!
+The repo includes a Github Actions workflow for continuous deployment.
 
-The [`Dockerfile`](./Dockerfile) on the `master` branch points to latest stable TypeDB version.
-## Deployment
 
-### One Click
-
-Use the button below to deploy MongoDB on Render.
-
-[![Deploy to Render](http://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
 [TypeDB]: https://www.vaticle.com/
+[Fly]: https://fly.io
