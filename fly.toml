@@ -9,6 +9,7 @@ kill_timeout = 5
   MINIO_BUCKET = 'typedb-backups'
   MINIO_HOST = 'https://pithos.fly.dev'
   TYPEDB_DATABASE = 'athena'
+  TYPEDB_PORT = 1729
 
 [[mounts]]
   destination = "/typedb-all-linux/server/data/"

@@ -31,7 +31,7 @@ fi
 
 echo "Creating export of ${TYPEDB_DATABASE} database."
 
-./typedb-all-linux/typedb server export --database=$TYPEDB_DATABASE --file=export.typedb
+./typedb-all-linux/typedb server export --database=$TYPEDB_DATABASE --file=export.typedb --port$TYPEDB_PORT
 
 echo "Creating MinIO alias ..."
 mc alias set minio_alias $MINIO_HOST $MINIO_ACCESSKEY $MINIO_SECRETKEY
