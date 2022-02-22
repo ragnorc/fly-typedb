@@ -37,7 +37,7 @@ echo "Creating MinIO alias ..."
 mc alias set minio_alias $MINIO_HOST $MINIO_ACCESSKEY $MINIO_SECRETKEY
 
 echo "Uploading export.typedb to $MINIO_BUCKET ..."
-mc cp dump.tar minio_alias/$MINIO_BUCKET/${POSTGRES_DATABASE}_$(date +"%Y-%m-%dT%H:%M:%SZ").typedb
+mc cp export.typedb minio_alias/$MINIO_BUCKET/${POSTGRES_DATABASE}_$(date +"%Y-%m-%dT%H:%M:%SZ").typedb
 echo "TypeDB backup uploaded successfully."
 
 rm export.typedb
