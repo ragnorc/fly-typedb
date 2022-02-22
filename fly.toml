@@ -5,7 +5,7 @@ app = "flydb"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
-[[env]]
+[env]
   MINIO_BUCKET = 'typedb-backups'
   MINIO_HOST = 'https://pithos.fly.dev'
   TYPEDB_DATABASE = 'athena'
