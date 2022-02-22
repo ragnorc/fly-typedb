@@ -7,7 +7,9 @@ Fly allows easy deployment of servers with multiple regions, SSL and private net
 The repo includes a Github Actions workflow for continuous deployment.
 
 ## Backups
-- The docker runs a backup process alongside the TypeDB server. You can set the appropriate env variables to upload the backups to your cloud storage.
+The docker runs a backup process alongside the TypeDB server using darthSim/overmind and odise/go-cron.
+You can set the appropriate env variables in the `fly.toml` to upload the backups to your cloud storage.
+
 
 [TypeDB]: https://www.vaticle.com/
 [Fly]: https://fly.io
