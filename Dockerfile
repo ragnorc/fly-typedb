@@ -18,7 +18,6 @@ RUN wget -O mc https://dl.min.io/client/mc/release/linux-amd64/mc && mv mc /usr/
 
 
 COPY typedb-all-linux /typedb-all-linux
-RUN rm -r /typedb-all-linux/server/data/lost+found || true
 EXPOSE 1729
 ADD Procfile /Procfile
 ADD backup.sh /backup.sh
