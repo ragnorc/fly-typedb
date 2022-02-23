@@ -16,8 +16,8 @@ RUN curl -L --insecure https://github.com/DarthSim/overmind/releases/download/v2
 
 RUN wget -O mc https://dl.min.io/client/mc/release/linux-amd64/mc && mv mc /usr/local/bin && chmod u+x /usr/local/bin/mc
 
+RUN wget -O tdb https://github.com/vaticle/typedb/releases/download/2.6.4/typedb-all-linux-2.6.4.tar.gz && tar -xf tdb && mv typedb-all-linux-2.6.4 typedb-all-linux
 
-COPY typedb-all-linux /typedb-all-linux
 EXPOSE 1729
 ADD Procfile /Procfile
 ADD backup.sh /backup.sh
