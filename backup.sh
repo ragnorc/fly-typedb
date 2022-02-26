@@ -1,9 +1,6 @@
 
 #! /bin/sh
 
-set -e
-set -o pipefail
-
 if [ -z "$MINIO_ACCESSKEY" ]; then
     echo "You need to set the MINIO_ACCESSKEY environment variable."
     exit 1
