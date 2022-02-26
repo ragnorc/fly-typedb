@@ -7,7 +7,6 @@ kill_timeout = 5
 
 [env]
   TYPEDB_PORT = 1729
-  TYPEDB_VERSION = '2.7.0'
 
 [[mounts]]
   destination = "/typedb-all-linux/server/data/"

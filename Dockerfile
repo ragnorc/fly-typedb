@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y \
         tmux
 
 WORKDIR /
+
+ENV TYPEDB_VERSION '2.7.0'
+
 RUN curl -L --insecure https://github.com/odise/go-cron/releases/download/v0.0.7/go-cron-linux.gz | zcat > /usr/local/bin/go-cron && chmod u+x /usr/local/bin/go-cron
 RUN curl -L --insecure https://github.com/DarthSim/overmind/releases/download/v2.2.2/overmind-v2.2.2-linux-amd64.gz | zcat > /usr/local/bin/overmind && chmod u+x /usr/local/bin/overmind
 
