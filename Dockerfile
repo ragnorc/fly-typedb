@@ -1,10 +1,6 @@
 FROM vaticle/typedb:latest
 
 
-RUN curl https://pkgs.tailscale.com/stable/ubuntu/focal.gpg |  apt-key add -
-# Add the tailscale repository
-RUN curl https://pkgs.tailscale.com/stable/ubuntu/focal.list |  tee /etc/apt/sources.list.d/tailscale.list
-
 
 RUN apt-get update && apt-get install -y \
         wget \
@@ -14,8 +10,13 @@ RUN apt-get update && apt-get install -y \
         iptables \
         curl \
         tmux \
-        gnupg \
-        tailscale
+        gnupg
+
+RUN curl https://pkgs.tailscale.com/stable/ubuntu/focal.gpg |  apt-key add -
+# Add the tailscale repository
+RUN curl https://pkgs.tailscale.com/stable/ubuntu/focal.list |  tee /etc/apt/sources.list.d/tailscale.list
+RUN apt-get update && apt-get install -y tailscale
+
 
 WORKDIR /
 
