@@ -33,4 +33,6 @@ RUN wget -O tdb https://github.com/vaticle/typedb/releases/download/$TYPEDB_VERS
 ADD Procfile /Procfile
 ADD backup.sh /backup.sh
 ADD tailscale.sh /tailscale.sh
-CMD ["overmind", "start"]
+ADD start.sh /start.sh
+
+CMD ["/bin/sh","start.sh"]
