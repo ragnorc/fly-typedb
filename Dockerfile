@@ -1,4 +1,11 @@
 FROM vaticle/typedb:latest
+
+
+RUN curl https://pkgs.tailscale.com/stable/ubuntu/focal.gpg |  apt-key add -
+# Add the tailscale repository
+RUN curl https://pkgs.tailscale.com/stable/ubuntu/focal.list |  tee /etc/apt/sources.list.d/tailscale.list
+
+
 RUN apt-get update && apt-get install -y \
         wget \
         bash \
@@ -6,7 +13,9 @@ RUN apt-get update && apt-get install -y \
         ca-certificates \
         iptables \
         curl \
-        tmux
+        tmux \
+        gnupg \
+        tailscale
 
 WORKDIR /
 
@@ -19,6 +28,8 @@ RUN wget -O mc https://dl.min.io/client/mc/release/linux-amd64/mc && mv mc /usr/
 
 RUN wget -O tdb https://github.com/vaticle/typedb/releases/download/$TYPEDB_VERSION/typedb-all-linux-$TYPEDB_VERSION.tar.gz && tar -xf tdb && mv typedb-all-linux-$TYPEDB_VERSION typedb-all-linux
 
+
 ADD Procfile /Procfile
 ADD backup.sh /backup.sh
+ADD tailscale.sh /tailscale.sh
 CMD ["overmind", "start"]
